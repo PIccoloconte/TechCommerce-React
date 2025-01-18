@@ -2,7 +2,12 @@
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  HashRouter,
+} from "react-router-dom";
 import HomeScreen from "./screen/HomeScreen";
 import ProductsPage from "./screen/ProductsPage";
 import Product from "./screen/Product";
@@ -14,7 +19,7 @@ import Payment from "./screen/Payment";
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <Navbar />
       <Sidebar />
       <Routes>
@@ -29,7 +34,7 @@ function App() {
         </Route>
       </Routes>
       <Footer />
-    </Router>
+    </HashRouter>
   );
 }
 

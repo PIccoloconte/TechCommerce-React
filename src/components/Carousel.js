@@ -13,6 +13,7 @@ const ScrollProducs = [
     subtitle:
       "iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.",
     bgColor: "#FFFFFF",
+    ProductID: 106,
   },
   {
     id: "Scroll_VisionPro",
@@ -21,6 +22,7 @@ const ScrollProducs = [
     subtitle:
       "iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.",
     bgColor: "#F9F9F9",
+    ProductID: 112,
   },
   {
     id: "Scroll_AirPods",
@@ -29,6 +31,7 @@ const ScrollProducs = [
     subtitle:
       "iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.",
     bgColor: "#EAEAEA",
+    ProductID: 100,
   },
   {
     id: "Scroll_MacBook",
@@ -37,6 +40,7 @@ const ScrollProducs = [
     subtitle:
       "iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.",
     bgColor: "#2C2C2C",
+    ProductID: 78,
   },
 ];
 
@@ -76,7 +80,11 @@ const Carousel = () => {
               />
               <h1 className="px-8 mb-4 text-5xl">{el.title}</h1>
               <p className="text-[#909090] mb-4 px-8">{el.subtitle}</p>
-              <ShopNow mbValue={28} color={"black"}></ShopNow>
+              <ShopNow
+                mbValue={28}
+                color={"black"}
+                ProductID={el.ProductID}
+              ></ShopNow>
             </div>
           );
         })}

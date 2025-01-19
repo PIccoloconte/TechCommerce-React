@@ -1,9 +1,10 @@
 import React from "react";
 import { CiHeart } from "react-icons/ci";
+import { useNavigate } from "react-router-dom";
 
 const CardProduct = ({ product }) => {
   const { id, title, description, price, images } = product;
-  console.log(images[0]);
+  const navigate = useNavigate();
 
   return (
     <div className="relative px-3 pb-6 rounded-lg bg-product_bg pt-14">
@@ -17,7 +18,10 @@ const CardProduct = ({ product }) => {
           {description}
         </h4>
         <h2 className="mb-4 text-2xl font-semibold xl:mb-6">${price}</h2>
-        <button className="w-full py-3 text-white bg-black rounded-lg">
+        <button
+          className="w-full py-3 text-white bg-black rounded-lg"
+          onClick={() => navigate(`/Product/${id}`)}
+        >
           Buy Now
         </button>
       </div>

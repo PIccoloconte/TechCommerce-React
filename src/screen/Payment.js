@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import CreditCard from "../assets/img/CreditCard.png";
+import { useNavigate } from "react-router-dom";
 
 const Payment = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="my-12 px-4 xl:px-40">
-      <h1 className="text-xl font-semibold mb-8">Payment</h1>
+    <div className="px-4 my-12 xl:px-40">
+      <h1 className="mb-8 text-xl font-semibold">Payment</h1>
       <div className="flex justify-around mb-10">
-        <p className="font-medium pb-2 border-b border-black w-fit">
+        <p className="pb-2 font-medium border-b border-black w-fit">
           Credit Card
         </p>
         <p className="font-medium pb-2  text-[#717171]">PayPal</p>
@@ -35,7 +38,7 @@ const Payment = () => {
             className="flex-1 w-full  px-4 py-3 border border-[#CECECE] rounded-md "
           ></input>
         </div>
-        <div className="my-10 flex items-center">
+        <div className="flex items-center my-10">
           <input type="checkbox" id="billing" className="mr-2"></input>
           <label htmlFor="billing" className="font-medium">
             Same as billing address
@@ -43,11 +46,14 @@ const Payment = () => {
         </div>
       </form>
 
-      <div className="flex justify-between items-center gap-6">
-        <button className="flex-1  max-w-52 border-black py-6 border rounded-md font-medium">
+      <div className="flex items-center justify-between gap-6">
+        <button
+          className="flex-1 py-6 font-medium border border-black rounded-md max-w-52"
+          onClick={() => navigate(`/Checkout/Shipping`)}
+        >
           Back
         </button>
-        <button className="flex-1 max-w-52 bg-black border text-white py-6 rounded-md font-medium">
+        <button className="flex-1 py-6 font-medium text-white bg-black border rounded-md max-w-52">
           Pay
         </button>
       </div>

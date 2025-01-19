@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaPen } from "react-icons/fa6";
 import { RiCloseLargeLine } from "react-icons/ri";
 import { FiPlus } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 const Address = () => {
+  const navigate = useNavigate();
+  const [selectedAddress, setSelectedAddress] = useState("address-1"); //Current address
+
+  const handleChange = (event) => {
+    setSelectedAddress(event.target.value);
+  };
+
   return (
     <div className="px-4 my-12 xl:px-40">
       <h1 className="mb-8 text-xl font-semibold">Select Address</h1>
@@ -14,6 +22,8 @@ const Address = () => {
             id="address-1"
             value="address-1"
             name="address"
+            checked={selectedAddress === "address-1"}
+            onChange={handleChange}
             required
           ></input>
           <div className="w-full">
@@ -46,13 +56,15 @@ const Address = () => {
             id="address-2"
             value="address-2"
             name="address"
+            checked={selectedAddress === "address-2"}
+            onChange={handleChange}
             required
           ></input>
           <div className="w-full">
             <div className="flex gap-6 mb-4">
               <p className="text-lg">VIlla campanile</p>
               <div className="flex items-center justify-center px-2 py-1 text-xs font-medium text-white bg-black rounded">
-                HOME
+                WORK
               </div>
             </div>
             <div className="flex justify-between gap-4 mb-2">
@@ -80,10 +92,16 @@ const Address = () => {
       </div>
 
       <div className="flex items-center justify-between gap-6 xl:justify-end">
-        <button className="flex-1 py-6 font-medium border border-black rounded-md max-w-52">
+        <button
+          className="flex-1 py-6 font-medium border border-black rounded-md max-w-52"
+          onClick={() => navigate(`/Cart`)}
+        >
           Back
         </button>
-        <button className="flex-1 py-6 font-medium text-white bg-black border rounded-md max-w-52">
+        <button
+          className="flex-1 py-6 font-medium text-white bg-black border rounded-md max-w-52"
+          onClick={() => navigate(`/Checkout/Shipping`)}
+        >
           Next
         </button>
       </div>

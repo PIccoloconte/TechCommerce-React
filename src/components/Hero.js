@@ -1,6 +1,7 @@
 import React from "react";
 import Iphone from "../assets/img/Iphone.png";
 import { ShopNow } from "./Buttons";
+
 const Hero = () => {
   return (
     <div className="text-center h-[770px] pt-20 px-4 bg-[#211C24] overflow-hidden lg:flex lg:h-[632px] lg:justify-between lg:px-40 lg:text-start gap-4">
@@ -13,7 +14,7 @@ const Hero = () => {
         <p className="text-xl mb-8 text-[#909090]">
           Created to change everything for the better. For everyone
         </p>
-        <ShopNow mbValue={12} color={"white"}></ShopNow>
+        <ShopNow mbValue={12} color={"white"} ProductID={123}></ShopNow>
       </div>
       <img className="m-auto -translate-y-14 " src={Iphone} alt="iphone"></img>
     </div>

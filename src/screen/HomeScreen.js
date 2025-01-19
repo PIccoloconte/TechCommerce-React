@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import { useGlobalContext } from "../context";
 import LayoutGrid from "../components/LayoutGrid";
@@ -10,26 +10,25 @@ import Carousel from "../components/Carousel";
 import { Link } from "react-router-dom";
 
 const HomeScreen = () => {
-  const { valueURL, ChangeGlobalURL } = useGlobalContext();
-  const [input, setInput] = useState("/category/smartphones");
-  //const { data } = useFetch();
+  // const { valueURL, ChangeGlobalURL } = useGlobalContext();
+  // const [input, setInput] = useState("/category/smartphones");
+  // //const { data } = useFetch();
 
-  const handleSubmit = (e, value) => {
-    e.preventDefault();
-    console.log(value);
+  // useEffect(() => {
+  //   ChangeGlobalURL(input);
+  // }, []);
 
-    ChangeGlobalURL(value);
-  };
+  // const handleSubmit = (e, value) => {
+  //   e.preventDefault();
+  //   console.log(value);
 
+  //   ChangeGlobalURL(value);
+  // };
+  //onClick={(e) => handleSubmit(e, input)}
   return (
     <div className="mt-[97px] lg:mt-[81px]">
-      <div>
-        <button
-          className="p-5 bg-slate-600"
-          onClick={(e) => handleSubmit(e, input)}
-        >
-          dsadsd
-        </button>
+      {/* <div>
+        <button className="p-5 bg-slate-600">dsadsd</button>
       </div>
       <Link to="/ProductPage">ProductsPage</Link>
       <p>
@@ -40,7 +39,7 @@ const HomeScreen = () => {
       </p>
       <p>
         <Link to="Checkout">Checkout</Link>
-      </p>
+      </p> */}
       <Hero></Hero>
       <LayoutGrid></LayoutGrid>
       <Category></Category>

@@ -3,7 +3,7 @@ import axios from "axios";
 
 const URL = "https://dummyjson.com/products";
 
-const useFetch = (query) => {
+const useFetch = (valueURL) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [data, setData] = useState([]);
@@ -13,15 +13,15 @@ const useFetch = (query) => {
       setIsError(false);
       setIsLoading(true);
       try {
-        const response = await axios.get(`${URL}${query}`);
-        console.log(response.data);
+        const response = await axios.get(`${URL}${valueURL}`);
+        // console.log(response.data);
         setData(response.data);
       } catch (err) {
         setIsError(true);
       }
       setIsLoading(false);
-    })(query);
-  }, [query]);
+    })(valueURL);
+  }, [valueURL]);
 
   return { isLoading, isError, data };
 };

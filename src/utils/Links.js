@@ -46,7 +46,7 @@ const MainLinkComponent = ({ isSidebar }) => {
           <Link
             key={link.text}
             to={link.url}
-            className="md:mr-4 md:last:mr-0 lg:mr-12 lg:last:mr-0 flex gap-3 items-center text-xl"
+            className="flex items-center gap-3 text-xl md:mr-4 md:last:mr-0 lg:mr-12 lg:last:mr-0"
           >
             {isSidebar && link.icon}
             {link.text}
@@ -59,7 +59,7 @@ const MainLinkComponent = ({ isSidebar }) => {
 
 const Links = [
   {
-    url: "/Whishlist",
+    url: "/", //Whishlist
     title: "Whishlist",
     icon: <CiHeart className="w-8 h-8" />,
   },
@@ -69,7 +69,7 @@ const Links = [
     icon: <PiShoppingCartLight className="w-8 h-8" />,
   },
   {
-    url: "/Profile",
+    url: "/", //Profile
     title: "Profile",
     icon: <CiUser className="w-8 h-8" />,
   },
@@ -87,8 +87,9 @@ const UtilityLinks = ({ isSidebar }) => {
       {Links.map((link) => {
         return (
           <Link
-            key={link.url}
-            className="md:mr-2 md:last:mr-0 lg:mr-6 lg:last:mr-0 flex gap-3 items-center text-xl"
+            to={link.url}
+            key={link.title}
+            className="flex items-center gap-3 text-xl md:mr-2 md:last:mr-0 lg:mr-6 lg:last:mr-0"
           >
             {link.icon}
             {isSidebar && link.title}
@@ -120,7 +121,7 @@ const SocialLink = [
 
 const SocialComponent = () => {
   return (
-    <ul className="m-1 text-2xl flex justify-between w-44 mx-auto text-white xl:ml-0">
+    <ul className="flex justify-between m-1 mx-auto text-2xl text-white w-44 xl:ml-0">
       {SocialLink.map((el) => {
         return (
           <li key={el.url}>

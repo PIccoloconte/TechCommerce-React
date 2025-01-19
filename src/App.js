@@ -25,10 +25,10 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeScreen />}></Route>
         <Route path="/ProductPage" element={<ProductsPage />}></Route>
-        <Route path="/Product" element={<Product />}></Route>
+        <Route path="/Product/:id" element={<Product />}></Route>
         <Route path="/Cart" element={<Cart />}></Route>
         <Route path="/Checkout" element={<Checkout />}>
-          <Route path="/Checkout/Address" element={<Address />} />
+          <Route index element={<Address />} />{" "}
           <Route path="/Checkout/Shipping" element={<Shipping />} />
           <Route path="/Checkout/Payment" element={<Payment />} />
         </Route>

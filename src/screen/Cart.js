@@ -1,67 +1,41 @@
 import React from "react";
-import MacBook from "../assets/img/MacBook.png";
-import { FiPlus, FiMinus } from "react-icons/fi";
-import { IoCloseOutline } from "react-icons/io5";
+import Cartitem from "../components/Cartitem";
+import { useGlobalContext } from "../context";
+import { Link } from "react-router-dom";
 
-const Cartitem = () => {
-  return (
-    <>
-      <div className="flex items-center gap-4 py-4">
-        <img
-          className="w-[90px] h-[90px] object-contain"
-          src={MacBook}
-          alt="macBook"
-        ></img>
-        <div>
-          <div className="mb-2">
-            <h5 className="mb-2 font-medium">
-              Apple iPhone 14 Pro Max 128Gb Deep Purple
-            </h5>
-            <p>#25139526913984</p>
-          </div>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <button>
-                <FiMinus className="w-6 h-6"></FiMinus>
-              </button>
-              <input
-                type="text"
-                disabled
-                value={1}
-                className="w-12 mx-2 max-w-[40px] text-center bg-white border border-opacity-30 rounded-[4px]"
-              ></input>
-              <button>
-                <FiPlus className="w-6 h-6"></FiPlus>
-              </button>
-            </div>
-            <p className="text-xl font-medium">$1399</p>
-            <IoCloseOutline className="w-6 h-6"></IoCloseOutline>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
-
+const tax = 50;
 const Cart = () => {
+  const { cartProducts } = useGlobalContext();
+  console.log(cartProducts);
+
+  //Price for only products
+  const CalcSubtotal = () => {
+    return cartProducts.reduce((total, item) => {
+      return total + item.price * item.quantity;
+    }, 0);
+  };
+
   return (
     <div className="mt-[97px] lg:mt-[150px] px-4">
       <div className="w-full gap-12 lg:flex">
         <section className="py-10 lg:flex-1">
-          <h2 className="mb-10 text-2xl font-semibold">Shopping Cart</h2>
-          <Cartitem></Cartitem>
-          <hr className="my-10"></hr>
-          <Cartitem></Cartitem>
-          <hr className="my-10"></hr>
-          <Cartitem></Cartitem>
-          <hr className="my-10"></hr>
-          <Cartitem></Cartitem>
-          <hr className="my-10"></hr>
-          <Cartitem></Cartitem>
-          <hr className="my-10"></hr>
-          <Cartitem></Cartitem>
-          <hr className="my-10"></hr>
-          <Cartitem></Cartitem>
+          {cartProducts.length === 0 ? (
+            <h1 className="text-2xl font-semibold">
+              No products in the cart...
+            </h1>
+          ) : (
+            <>
+              <h2 className="mb-10 text-2xl font-semibold">Shopping Cart</h2>
+              {cartProducts.map((prod) => {
+                return (
+                  <div key={prod.id}>
+                    <Cartitem {...prod}></Cartitem>
+                    <hr className="my-10"></hr>
+                  </div>
+                );
+              })}
+            </>
+          )}
         </section>
         <section className="px-4 mb-10 border py-14 lg:py-10 border-opacity-30 rounded-xl lg:flex-1 lg:h-fit">
           <h2 className="mb-10 text-2xl font-semibold">Order Summary</h2>
@@ -92,25 +66,23 @@ const Cart = () => {
             <div className="mb-12">
               <div className="flex items-center justify-between mb-4 font-medium">
                 <p>Subtotal</p>
-                <p>$2347</p>
+                <p>${CalcSubtotal()}</p>
               </div>
               <div className="flex items-center justify-between mb-4">
                 <p className="text-[#545454]">Estimated Tax</p>
-                <p className="font-medium">$50</p>
-              </div>
-              <div className="flex items-center justify-between mb-4">
-                <p className="text-[#545454]">Estimated shipping </p>
-                <p className="font-medium">$29</p>
+                <p className="font-medium">${tax}</p>
               </div>
               <div className="flex items-center justify-between mb-4 font-medium">
                 <p>Total</p>
-                <p>$2426</p>
+                <p>{"$" + (CalcSubtotal() + tax)}</p>
               </div>
             </div>
           </div>
-          <button className="w-full py-4 text-white bg-black rounded-md">
-            Checkout
-          </button>
+          <Link to="/Checkout">
+            <button className="w-full py-4 text-white bg-black rounded-md">
+              Checkout
+            </button>
+          </Link>
         </section>
       </div>
     </div>

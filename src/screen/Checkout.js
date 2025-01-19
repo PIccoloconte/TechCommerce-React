@@ -25,12 +25,12 @@ const CheckoutSection = [
 const Checkout = () => {
   return (
     <div className="mt-[97px]">
-      <div className="flex items-center xl:px-40 gap-2 px-4 py-8">
+      <div className="flex items-center gap-2 px-4 py-8 xl:px-40">
         {CheckoutSection.map((el) => {
           return (
             <div
               key={el.name}
-              className="flex items-center gap-2 flex-1 md:justify-center "
+              className="flex items-center flex-1 gap-2 md:justify-center "
             >
               <div className="w-6 h-6 rounded-[50%] bg-black flex justify-center items-center">
                 {el.icon}
@@ -42,12 +42,6 @@ const Checkout = () => {
             </div>
           );
         })}
-      </div>
-
-      <div className="flex gap-7">
-        <Link to="/Checkout/Address"> Address</Link>
-        <Link to="/Checkout/Shipping">Shipping</Link>
-        <Link to="/Checkout/Payment">Payment</Link>
       </div>
 
       <div>

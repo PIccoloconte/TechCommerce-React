@@ -93,7 +93,7 @@ const LayoutGrid = () => {
                 The new 15-inch MacBook Air makes room for more of whant you
                 love with a spacious Liquid Retina display
               </p>
-              <ShopNow mbValue={0} color={"black"}></ShopNow>
+              <ShopNow mbValue={0} color={"black"} ProductID={78}></ShopNow>
             </div>
           </div>
         </div>

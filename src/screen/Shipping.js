@@ -30,7 +30,10 @@ const Shipping = () => {
       <div className="mb-10">
         {shipmentData.map((el) => {
           return (
-            <div className="p-6 border border-[#D1D1D8] rounded-xl  flex items-center justify-between mb-4 last:mb-0">
+            <div
+              key={el.value}
+              className="p-6 border border-[#D1D1D8] rounded-xl  flex items-center justify-between mb-4 last:mb-0"
+            >
               <div className="flex-1 md:flex md:gap-4">
                 <input
                   className="mb-2"

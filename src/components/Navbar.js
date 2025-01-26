@@ -1,29 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { IoSearchOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { MainLinkComponent, UtilityLinks } from "../utils/Links";
 import { useGlobalContext } from "../context";
 import { formToJSON } from "axios";
-
 const Navbar = () => {
-  const { openSidebar } = useGlobalContext();
+  const { openSidebar, ChangeSearchBarValue } = useGlobalContext();
+  const [input, setInput] = useState("");
+  const navigate = useNavigate();
 
+  const HandleSubmit = (e) => {
+    e.preventDefault();
+    ChangeSearchBarValue(input);
+    navigate(`/ProductPage/${input}`);
+  };
   return (
-    <nav className="top-0 left-0 w-full fixed bg-white z-50">
-      <div className="flex justify-between items-center px-4 py-6 2xl:px-40 lg:py-4 border-b-2">
+    <nav className="fixed top-0 left-0 z-50 w-full bg-white">
+      <div className="flex items-center justify-between px-4 py-6 border-b-2 2xl:px-40 lg:py-4">
         <Link to="/">
           <strong className="text-xl">Cyber</strong>
         </Link>
-        <form className="bg-search_bg rounded-lg lg:max-w-96 lg:w-full">
-          <div className="relative flex items-center w-auto h-12 rounded-lg  overflow-hidden">
-            <button className="place-items-center w-12 text-gray-300">
+        <form
+          onSubmit={HandleSubmit}
+          className="rounded-lg bg-search_bg lg:max-w-96 lg:w-full"
+        >
+          <div className="relative flex items-center w-auto h-12 overflow-hidden rounded-lg">
+            <button className="w-12 text-gray-300 place-items-center">
               <IoSearchOutline className="w-6 h-6" />
             </button>
             <input
-              className="peer h-full w-full outline-none text-sm bg-search_bg text-gray-700 pr-2"
+              className="w-full h-full pr-2 text-sm text-gray-700 outline-none peer bg-search_bg"
               type="text"
-              placeholder="Search "
+              placeholder="Search"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
             />
           </div>
         </form>

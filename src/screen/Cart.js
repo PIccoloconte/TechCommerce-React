@@ -1,28 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Cartitem from "../components/Cartitem";
 import { useGlobalContext } from "../context";
 import { Link } from "react-router-dom";
+import BackToShopBtn from "../components/BackToShopBtn";
 
-const tax = 50;
+const tax = 22;
 const Cart = () => {
   const { cartProducts } = useGlobalContext();
   console.log(cartProducts);
+  const [isCartEmpty, setIsCartEmpty] = useState(true);
+
+  useEffect(() => {
+    if (cartProducts.length > 0) {
+      setIsCartEmpty(false);
+    } else {
+      setIsCartEmpty(true);
+    }
+  }, [cartProducts]);
 
   //Price for only products
   const CalcSubtotal = () => {
     return cartProducts.reduce((total, item) => {
-      return total + item.price * item.quantity;
+      return parseFloat((total + item.price * item.quantity).toFixed(2));
     }, 0);
+  };
+  const CalcTax = () => {
+    return parseFloat(((CalcSubtotal() / 100) * tax).toFixed(2));
   };
 
   return (
-    <div className="mt-[97px] lg:mt-[150px] px-4">
+    <div className="mt-[97px] lg:mt-[150px] px-4 lg:px-28">
       <div className="w-full gap-12 lg:flex">
         <section className="py-10 lg:flex-1">
           {cartProducts.length === 0 ? (
-            <h1 className="text-2xl font-semibold">
-              No products in the cart...
-            </h1>
+            <div>
+              <h1 className="mb-10 text-2xl font-semibold">
+                No products into cart...
+              </h1>
+              <BackToShopBtn />
+            </div>
           ) : (
             <>
               <h2 className="mb-10 text-2xl font-semibold">Shopping Cart</h2>
@@ -59,7 +75,7 @@ const Cart = () => {
                 className="w-full p-4 mb-6 border rounded-md border-opacity-30"
                 placeholder="Enter Card Number"
               ></input>
-              <button className="py-2 px-4 border rounded-md font-medium text-xs border-black absolute right-[50px] translate-y-3">
+              <button className="py-2 px-4 border rounded-md font-medium text-xs border-black absolute right-[50px] lg:right-[145px] translate-y-3">
                 Apply
               </button>
             </div>
@@ -70,16 +86,23 @@ const Cart = () => {
               </div>
               <div className="flex items-center justify-between mb-4">
                 <p className="text-[#545454]">Estimated Tax</p>
-                <p className="font-medium">${tax}</p>
+                <p className="font-medium">
+                  ${`${CalcSubtotal() === 0 ? 0 : CalcTax()}`}
+                </p>
               </div>
               <div className="flex items-center justify-between mb-4 font-medium">
                 <p>Total</p>
-                <p>{"$" + (CalcSubtotal() + tax)}</p>
+                <p>{"$" + (CalcSubtotal() + CalcTax()).toFixed(2)}</p>
               </div>
             </div>
           </div>
           <Link to="/Checkout">
-            <button className="w-full py-4 text-white bg-black rounded-md">
+            <button
+              className={`w-full py-4 text-white bg-black rounded-md ${
+                isCartEmpty ? "opacity-30" : "opacity-100"
+              }`}
+              disabled={isCartEmpty}
+            >
               Checkout
             </button>
           </Link>

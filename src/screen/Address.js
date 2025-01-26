@@ -1,95 +1,182 @@
-import React, { useState } from "react";
-import { FaPen } from "react-icons/fa6";
-import { RiCloseLargeLine } from "react-icons/ri";
+import React, { useState, useEffect } from "react";
 import { FiPlus } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import AddressItem from "../components/AddressItem";
+import { useGlobalContext } from "../context";
 
 const Address = () => {
+  const { addressList, setAddressList } = useGlobalContext();
   const navigate = useNavigate();
-  const [selectedAddress, setSelectedAddress] = useState("address-1"); //Current address
+  //input radio state
+  const [selectedAddress, setSelectedAddress] = useState("");
+  const [isNewAddress, setIsNewAddress] = useState(false);
+  //Value to <Addressitem />
+  const [singleAddress, setSingleAddress] = useState({
+    city: "",
+    address: "",
+    CAP: "",
+    nation: "",
+    number: "",
+  });
 
-  const handleChange = (event) => {
+  //Add first addrees input radio active
+  useEffect(() => {
+    if (addressList.length > 0 && !selectedAddress) {
+      setSelectedAddress(addressList[0].city);
+    }
+  }, [addressList, selectedAddress]);
+
+  const handleChangeInputRadio = (event) => {
     setSelectedAddress(event.target.value);
+  };
+
+  //Change form value
+  const HandleChange = (e) => {
+    const { name, value } = e.target;
+    setSingleAddress({ ...singleAddress, [name]: value });
+  };
+
+  //Form submit
+  const HandleSubmit = (e) => {
+    e.preventDefault();
+    setIsNewAddress(false);
+
+    if (
+      singleAddress.city &&
+      singleAddress.address &&
+      singleAddress.CAP &&
+      singleAddress.nation &&
+      singleAddress.number
+    ) {
+      setAddressList([
+        ...addressList,
+        {
+          ...singleAddress,
+        },
+      ]);
+      setSingleAddress({
+        city: "",
+        address: "",
+        CAP: "",
+        nation: "",
+        number: "",
+      });
+    } else {
+      alert("form is empty");
+    }
+  };
+
+  const RemoveAddress = (city) => {
+    setAddressList((prevAddressList) => {
+      return prevAddressList.filter(
+        (addressToDelete) => addressToDelete.city !== city
+      );
+    });
   };
 
   return (
     <div className="px-4 my-12 xl:px-40">
       <h1 className="mb-8 text-xl font-semibold">Select Address</h1>
-      <div className="mb-6">
-        <div className="flex items-baseline gap-4 p-6 mb-6 rounded-lg bg-product_bg">
-          <input
-            type="radio"
-            id="address-1"
-            value="address-1"
-            name="address"
-            checked={selectedAddress === "address-1"}
-            onChange={handleChange}
-            required
-          ></input>
-          <div className="w-full">
-            <div className="flex gap-6 mb-4">
-              <p className="text-lg">Thornridge</p>
-              <div className="flex items-center justify-center px-2 py-1 text-xs font-medium text-white bg-black rounded">
-                HOME
-              </div>
-            </div>
-            <div className="flex justify-between gap-4 mb-2">
-              <p>2118 Thornridge Cir. Syracuse, Connecticut 35624</p>
-              <div className="flex items-center gap-6">
-                <button>
-                  <FaPen className="w-4 h-4"></FaPen>
-                </button>
-                <button>
-                  <RiCloseLargeLine className="w-4 h-4"></RiCloseLargeLine>
-                </button>
-              </div>
-            </div>
-            <p>(209) 555-0104</p>
-          </div>
-        </div>
-      </div>
 
-      <div className="mb-12">
-        <div className="flex items-baseline gap-4 p-6 mb-6 rounded-lg bg-product_bg">
-          <input
-            type="radio"
-            id="address-2"
-            value="address-2"
-            name="address"
-            checked={selectedAddress === "address-2"}
-            onChange={handleChange}
-            required
-          ></input>
-          <div className="w-full">
-            <div className="flex gap-6 mb-4">
-              <p className="text-lg">VIlla campanile</p>
-              <div className="flex items-center justify-center px-2 py-1 text-xs font-medium text-white bg-black rounded">
-                WORK
-              </div>
-            </div>
-            <div className="flex justify-between gap-4 mb-2">
-              <p>2118 Thornridge Cir. Syracuse, Connecticut 35624</p>
-              <div className="flex items-center gap-6">
-                <button>
-                  <FaPen className="w-4 h-4"></FaPen>
-                </button>
-                <button>
-                  <RiCloseLargeLine className="w-4 h-4"></RiCloseLargeLine>
-                </button>
-              </div>
-            </div>
-            <p>(209) 555-0104</p>
-          </div>
-        </div>
-      </div>
+      {addressList.map((item) => {
+        return (
+          <AddressItem
+            key={item.city}
+            handleChangeInputRadio={handleChangeInputRadio}
+            selectedAddress={selectedAddress}
+            RemoveAddress={RemoveAddress}
+            item={item}
+          ></AddressItem>
+        );
+      })}
 
-      <div className="relative mb-16 text-center">
+      <div
+        className={`relative mb-16 text-center ${
+          isNewAddress ? "hidden" : "block"
+        }`}
+      >
         <hr className="border-black border-dashed text-clip"></hr>
-        <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2  w-6 h-6 rounded-[50%] bg-black flex justify-center items-center">
+        <button
+          className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2  w-6 h-6 rounded-[50%] bg-black flex justify-center items-center"
+          onClick={() => setIsNewAddress(true)}
+        >
           <FiPlus className="text-lg text-white"></FiPlus>
-        </div>
+        </button>
         <p className="mt-4">Add New Address</p>
       </div>
+
+      <form
+        className={`grid grid-cols-1 gap-3 m-16 lg:grid-cols-2 ${
+          isNewAddress ? "block" : "hidden"
+        }`}
+      >
+        <div>
+          <p className="mb-1">City</p>
+          <input
+            type="text"
+            placeholder="City"
+            className="w-full px-3 py-2 border rounded-lg"
+            required
+            name="city"
+            value={singleAddress.city}
+            onChange={HandleChange}
+          ></input>
+        </div>
+        <div>
+          <p className="mb-1">Address</p>
+          <input
+            type="text"
+            placeholder="Address"
+            className="w-full px-3 py-2 border rounded-lg"
+            required
+            name="address"
+            value={singleAddress.address}
+            onChange={HandleChange}
+          ></input>
+        </div>
+        <div>
+          <p className="mb-1">CAP</p>
+          <input
+            type="number"
+            placeholder="CAP"
+            className="w-full px-3 py-2 border rounded-lg"
+            required
+            name="CAP"
+            value={singleAddress.CAP}
+            onChange={HandleChange}
+          ></input>
+        </div>
+        <div>
+          <p className="mb-1">Nation</p>
+          <input
+            type="text"
+            placeholder="Nation"
+            className="w-full px-3 py-2 border rounded-lg"
+            required
+            name="nation"
+            value={singleAddress.nation}
+            onChange={HandleChange}
+          ></input>
+        </div>
+        <div>
+          <p className="mb-1">Telephone Number</p>
+          <input
+            type="number"
+            placeholder="Telephone number"
+            className="w-full px-3 py-2 border rounded-lg"
+            required
+            name="number"
+            value={singleAddress.number}
+            onChange={HandleChange}
+          ></input>
+        </div>
+        <button
+          className="w-full py-4 mx-auto text-center border border-black rounded-lg lg:py-0 max-w-80 "
+          onClick={(e) => HandleSubmit(e)}
+        >
+          Submit
+        </button>
+      </form>
 
       <div className="flex items-center justify-between gap-6 xl:justify-end">
         <button
@@ -99,8 +186,11 @@ const Address = () => {
           Back
         </button>
         <button
-          className="flex-1 py-6 font-medium text-white bg-black border rounded-md max-w-52"
+          className={`flex-1 py-6 font-medium text-white bg-black border rounded-md max-w-52 ${
+            addressList <= 0 ? "opacity-30" : "opacity-100"
+          }`}
           onClick={() => navigate(`/Checkout/Shipping`)}
+          disabled={addressList <= 0}
         >
           Next
         </button>

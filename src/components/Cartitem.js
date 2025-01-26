@@ -4,10 +4,11 @@ import { IoCloseOutline } from "react-icons/io5";
 import { useGlobalContext } from "../context";
 
 const Cartitem = ({ id, title, images, price, quantity }) => {
-  const { setCardProducts } = useGlobalContext();
+  const { setCardProducts, ChangeCartCountIcon } = useGlobalContext();
 
   // Increase qty
   const incrementQuantity = () => {
+    ChangeCartCountIcon(1);
     setCardProducts((prevCartProducts) =>
       prevCartProducts.map((product) =>
         product.id === id
@@ -19,8 +20,8 @@ const Cartitem = ({ id, title, images, price, quantity }) => {
 
   // Decrease qty
   const decrementQuantity = () => {
+    ChangeCartCountIcon(-1);
     setCardProducts((prevCartProducts) => {
-      // Mappa i prodotti per decrementare la quantità
       const updatedCart = prevCartProducts.map((product) =>
         product.id === id && product.quantity > 0
           ? { ...product, quantity: product.quantity - 1 }
@@ -29,6 +30,18 @@ const Cartitem = ({ id, title, images, price, quantity }) => {
 
       // Delete product if qty < 0
       return updatedCart.filter((product) => product.quantity > 0);
+    });
+  };
+
+  //Delete item function via button and remove product qty from cart Icon
+  const deleteProduct = (id) => {
+    setCardProducts((prevCartProducts) => {
+      prevCartProducts.forEach((product) => {
+        if (product.id === id) {
+          ChangeCartCountIcon(-product.quantity);
+        }
+      });
+      return prevCartProducts.filter((product) => product.id !== id);
     });
   };
 
@@ -61,7 +74,10 @@ const Cartitem = ({ id, title, images, price, quantity }) => {
               </button>
             </div>
             <p className="text-xl font-medium">${price}</p>
-            <IoCloseOutline className="w-6 h-6"></IoCloseOutline>
+            <IoCloseOutline
+              onClick={() => deleteProduct(id)}
+              className="w-6 h-6"
+            ></IoCloseOutline>
           </div>
         </div>
       </div>

@@ -16,6 +16,7 @@ import Checkout from "./screen/Checkout";
 import Address from "./screen/Address";
 import Shipping from "./screen/Shipping";
 import Payment from "./screen/Payment";
+import Whishlist from "./screen/Whishlist";
 
 function App() {
   return (
@@ -24,9 +25,10 @@ function App() {
       <Sidebar />
       <Routes>
         <Route path="/" element={<HomeScreen />}></Route>
-        <Route path="/ProductPage" element={<ProductsPage />}></Route>
+        <Route path="/ProductPage/:id" element={<ProductsPage />}></Route>
         <Route path="/Product/:id" element={<Product />}></Route>
         <Route path="/Cart" element={<Cart />}></Route>
+        <Route path="/Whishlist" element={<Whishlist />}></Route>
         <Route path="/Checkout" element={<Checkout />}>
           <Route index element={<Address />} />{" "}
           <Route path="/Checkout/Shipping" element={<Shipping />} />

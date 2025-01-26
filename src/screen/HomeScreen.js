@@ -10,21 +10,6 @@ import Carousel from "../components/Carousel";
 import { Link } from "react-router-dom";
 
 const HomeScreen = () => {
-  // const { valueURL, ChangeGlobalURL } = useGlobalContext();
-  // const [input, setInput] = useState("/category/smartphones");
-  // //const { data } = useFetch();
-
-  // useEffect(() => {
-  //   ChangeGlobalURL(input);
-  // }, []);
-
-  // const handleSubmit = (e, value) => {
-  //   e.preventDefault();
-  //   console.log(value);
-
-  //   ChangeGlobalURL(value);
-  // };
-  //onClick={(e) => handleSubmit(e, input)}
   return (
     <div className="mt-[97px] lg:mt-[81px]">
       {/* <div>

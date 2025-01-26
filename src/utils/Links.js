@@ -10,6 +10,7 @@ import { IoHomeOutline } from "react-icons/io5";
 import { RiBloggerLine } from "react-icons/ri";
 import { RiContactsBook3Line } from "react-icons/ri";
 import { RiTeamLine } from "react-icons/ri";
+import { useGlobalContext } from "../context";
 
 const mainLinks = [
   {
@@ -59,7 +60,7 @@ const MainLinkComponent = ({ isSidebar }) => {
 
 const Links = [
   {
-    url: "/", //Whishlist
+    url: "/Whishlist", //Whishlist
     title: "Whishlist",
     icon: <CiHeart className="w-8 h-8" />,
   },
@@ -76,6 +77,7 @@ const Links = [
 ];
 
 const UtilityLinks = ({ isSidebar }) => {
+  const { cartItemIcon, whishlistItemIcon } = useGlobalContext();
   return (
     <ul
       className={`${
@@ -89,10 +91,21 @@ const UtilityLinks = ({ isSidebar }) => {
           <Link
             to={link.url}
             key={link.title}
-            className="flex items-center gap-3 text-xl md:mr-2 md:last:mr-0 lg:mr-6 lg:last:mr-0"
+            className="relative flex items-center gap-3 text-xl md:mr-2 md:last:mr-0 lg:mr-6 lg:last:mr-0"
           >
             {link.icon}
             {isSidebar && link.title}
+            {link.title === "Cart" ? (
+              <small className="absolute -top-1 left-2 md:right-1 bg-red-700 bg-opacity-90 w-5 h-5 rounded-[50%] flex justify-center items-center">
+                {cartItemIcon}
+              </small>
+            ) : link.title === "Whishlist" ? (
+              <small className="absolute -top-1 left-[6px] md:right-1 bg-red-700 bg-opacity-90 w-5 h-5 rounded-[50%] flex justify-center items-center">
+                {whishlistItemIcon}
+              </small>
+            ) : (
+              <></>
+            )}
           </Link>
         );
       })}

@@ -4,3 +4,5 @@
 <p>2)Checkout with branches</p>
 <p>3) Card</p>
 <p>4)Product</p>
+<p>4)Whishlist</p>
+<p>4)ProductsPage with filters calle by categories or searchbar</p>

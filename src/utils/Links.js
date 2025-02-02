@@ -24,7 +24,7 @@ const mainLinks = [
     icon: <RiTeamLine className="w-8 h-8"></RiTeamLine>,
   },
   {
-    url: "/Contact",
+    url: "/ContactUs",
     text: "Contact us",
     icon: <RiContactsBook3Line className="w-8 h-8"></RiContactsBook3Line>,
   },
@@ -148,4 +148,4 @@ const SocialComponent = () => {
   );
 };
 
-export { MainLinkComponent, UtilityLinks, SocialComponent };
+export { MainLinkComponent, UtilityLinks, SocialComponent, SocialLink };

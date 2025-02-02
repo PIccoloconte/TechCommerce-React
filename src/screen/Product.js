@@ -53,6 +53,7 @@ const Product = () => {
 
   //Use Fetch from global context
   useEffect(() => {
+    window.scrollTo(0, 0);
     ChangeGlobalURL(`/${id}`);
   }, []);
 

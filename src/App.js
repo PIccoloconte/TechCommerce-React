@@ -17,6 +17,10 @@ import Address from "./screen/Address";
 import Shipping from "./screen/Shipping";
 import Payment from "./screen/Payment";
 import Whishlist from "./screen/Whishlist";
+import Blog from "./screen/Blog";
+import ContactUs from "./screen/ContactUs";
+import About from "./screen/About";
+import SingleBlogPost from "./screen/SingleBlogPost";
 
 function App() {
   return (
@@ -27,6 +31,10 @@ function App() {
         <Route path="/" element={<HomeScreen />}></Route>
         <Route path="/ProductPage/:id" element={<ProductsPage />}></Route>
         <Route path="/Product/:id" element={<Product />}></Route>
+        <Route path="/Blog" element={<Blog />}></Route>
+        <Route path="/SingleBlogPost/:id" element={<SingleBlogPost />}></Route>
+        <Route path="/About" element={<About />}></Route>
+        <Route path="/ContactUs" element={<ContactUs />}></Route>
         <Route path="/Cart" element={<Cart />}></Route>
         <Route path="/Whishlist" element={<Whishlist />}></Route>
         <Route path="/Checkout" element={<Checkout />}>

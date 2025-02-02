@@ -1,23 +1,36 @@
 {
   "files": {
-    "main.css": "/TechCommerce-React/static/css/main.859f8ec9.css",
-    "main.js": "/TechCommerce-React/static/js/main.9bc896a5.js",
+    "main.css": "/TechCommerce-React/static/css/main.ca3b905c.css",
+    "main.js": "/TechCommerce-React/static/js/main.0b8a3bbe.js",
     "static/js/488.68cc9a6e.chunk.js": "/TechCommerce-React/static/js/488.68cc9a6e.chunk.js",
+    "static/media/AboutHero.jpg": "/TechCommerce-React/static/media/AboutHero.635560a412bee9e170b2.jpg",
+    "static/media/ContactUsImage.jpg": "/TechCommerce-React/static/media/ContactUsImage.32ea45436128359871ab.jpg",
     "static/media/SummerSaleBannerDesktop.png": "/TechCommerce-React/static/media/SummerSaleBannerDesktop.a3a3b86e5c12bfd60b81.png",
+    "static/media/Worker5.png": "/TechCommerce-React/static/media/Worker5.0125d3ab85fbced5d202.png",
+    "static/media/Worker4.png": "/TechCommerce-React/static/media/Worker4.9888a0bcd2970797c282.png",
+    "static/media/Worker3.png": "/TechCommerce-React/static/media/Worker3.3f7d1677322b90695cca.png",
+    "static/media/Worker1.png": "/TechCommerce-React/static/media/Worker1.d0770c9999da647a5e25.png",
+    "static/media/Worker2.png": "/TechCommerce-React/static/media/Worker2.24a29d67e26b76775536.png",
     "static/media/Iphone.png": "/TechCommerce-React/static/media/Iphone.a7863fe3c033027fbee9.png",
     "static/media/SummerSaleBannerMobile.png": "/TechCommerce-React/static/media/SummerSaleBannerMobile.bc3a42d6f539b8ba177a.png",
+    "static/media/ClimateEndgame.png": "/TechCommerce-React/static/media/ClimateEndgame.3fb1201fffebeb212f94.png",
+    "static/media/Office.png": "/TechCommerce-React/static/media/Office.444db1979fe22b448e32.png",
+    "static/media/Worker6.png": "/TechCommerce-React/static/media/Worker6.7800315736e85dd9137a.png",
+    "static/media/Coworking.png": "/TechCommerce-React/static/media/Coworking.bb24599e76f99a16fddc.png",
+    "static/media/Desk.png": "/TechCommerce-React/static/media/Desk.b5f2c7bf2534fc001387.png",
     "static/media/MacBook.png": "/TechCommerce-React/static/media/MacBook.f873ca124e0cac7b8095.png",
     "static/media/AirPods.png": "/TechCommerce-React/static/media/AirPods.0c84cdcb3c94a4cd2d2e.png",
     "static/media/VisionPro.png": "/TechCommerce-React/static/media/VisionPro.a347d36aa1e3dc9c99db.png",
     "static/media/PlayStation.png": "/TechCommerce-React/static/media/PlayStation.1261db9ad0f56e2560ed.png",
+    "static/media/OurMission.jpg": "/TechCommerce-React/static/media/OurMission.3449963e8c44ea4801c7.jpg",
     "static/media/CreditCard.png": "/TechCommerce-React/static/media/CreditCard.77d2cb139ae95ebc8962.png",
     "index.html": "/TechCommerce-React/index.html",
-    "main.859f8ec9.css.map": "/TechCommerce-React/static/css/main.859f8ec9.css.map",
-    "main.9bc896a5.js.map": "/TechCommerce-React/static/js/main.9bc896a5.js.map",
+    "main.ca3b905c.css.map": "/TechCommerce-React/static/css/main.ca3b905c.css.map",
+    "main.0b8a3bbe.js.map": "/TechCommerce-React/static/js/main.0b8a3bbe.js.map",
     "488.68cc9a6e.chunk.js.map": "/TechCommerce-React/static/js/488.68cc9a6e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.859f8ec9.css",
-    "static/js/main.9bc896a5.js"
+    "static/css/main.ca3b905c.css",
+    "static/js/main.0b8a3bbe.js"
   ]
 }

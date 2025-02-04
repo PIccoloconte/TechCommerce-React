@@ -17,7 +17,7 @@ const SingleBlogPost = () => {
       <img src={image} alt={title} className="w-full mb-8"></img>
       {chapter.map((el) => {
         return (
-          <section>
+          <section key={el.id}>
             <p className="mb-2 text-xl font-semibold">{el.sectionTitle}</p>
             <p className="mb-8">{el.sectionDescription}</p>
           </section>

@@ -8,7 +8,7 @@ const About = () => {
     <div className="mt-[97px] lg:mt-[81px]">
       <section className="relative mb-8">
         <img src={AboutHero} alt="AboutHero"></img>
-        <div className="absolute inset-0 bg-black opacity-80"></div>
+        <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="absolute text-center text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
           <h2 className="w-screen text-2xl lg:text-4xl">
             Powering the dreams of tech innovators worldwide
@@ -50,12 +50,15 @@ const About = () => {
         <img
           src={OurMission}
           alt="Our Mission"
-          className="flex-1 rounded-3xl h-fit"
+          className="flex-1 mx-auto rounded-3xl h-fit"
+          loading="lazy"
         ></img>
       </section>
 
       <section className="px-2 md:px-4 2xl:px-28 my-7">
-        <h2 className="mb-8 text-3xl font-semibold">Meet Our Team</h2>
+        <h2 className="mb-8 text-2xl font-semibold lg:text-3xl">
+          Meet Our Team
+        </h2>
         <div className=" lg:items-center md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5">
           <AboutWorker></AboutWorker>
         </div>

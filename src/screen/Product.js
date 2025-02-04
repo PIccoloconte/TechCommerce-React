@@ -12,6 +12,7 @@ import { PiCpuLight } from "react-icons/pi";
 import { BsCameraFill } from "react-icons/bs";
 import { IoCameraReverse } from "react-icons/io5";
 import { GiBattery75 } from "react-icons/gi";
+import Spinner from "../components/Spinner";
 
 //Return the average of the review scores
 function SumRating(reviews) {
@@ -53,12 +54,16 @@ const Product = () => {
 
   //Use Fetch from global context
   useEffect(() => {
-    window.scrollTo(0, 0);
     ChangeGlobalURL(`/${id}`);
   }, []);
 
+  //Show Spinner on loading
   if (isLoading || !data || !data.title) {
-    return <div className="mt-[133px] text-3xl">Is loading...</div>;
+    return (
+      <div className="mt-[53px] text-3xl">
+        <Spinner />
+      </div>
+    );
   }
 
   const { title, description, price, images = [], reviews } = data;
@@ -288,13 +293,13 @@ const Product = () => {
             ))}
           </div>
         </div>
-        <form className="mb-8">
+        {/* <form className="mb-8">
           <input
             type="text"
             placeholder="Leave comment"
             className="w-full px-4 py-6 border border-opacity-50 rounded-lg"
           ></input>
-        </form>
+        </form> */}
         <>
           {reviews.map((rev) => {
             return (
@@ -326,10 +331,10 @@ const Product = () => {
           })}
         </>
 
-        <button className="flex items-center justify-center w-full gap-2 py-4 mx-auto mb-10 border border-black rounded-md max-w-56 ">
+        {/* <button className="flex items-center justify-center w-full gap-2 py-4 mx-auto mb-10 border border-black rounded-md max-w-56 ">
           <p className="font-semibold">View More</p>
           <FaAngleDown className="w-6 h-6"></FaAngleDown>
-        </button>
+        </button> */}
       </section>
       {/* <section className="my-10">
         <h1 className="mb-8 text-3xl">Related Products</h1>

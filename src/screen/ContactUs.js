@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import ContactUsImage from "../assets/img/ContactUs/ContactUsImage.jpg";
 import { FiPhoneCall } from "react-icons/fi";
 import { LuMailOpen } from "react-icons/lu";
@@ -26,10 +25,6 @@ const cardContacts = [
 
 const ContactUs = () => {
   const [people, setPeople] = useState([]);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const [person, setPerson] = useState({
     name: "",
@@ -80,8 +75,9 @@ const ContactUs = () => {
           src={ContactUsImage}
           alt="Contact-us-image"
           className="w-full"
+          loading="lazy"
         ></img>
-        <div className="absolute inset-0 bg-black opacity-80"></div>
+        <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="absolute w-full text-center text-white -translate-x-1/2 -translate-y-1/2 xl:text-left left-1/2 top-1/2 0 ">
           <h2 className="mb-3 text-2xl font-semibold md:text-5xl">
             Contact Us

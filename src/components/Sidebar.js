@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useGlobalContext } from "../context";
 import { IoClose } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { MainLinkComponent } from "../utils/Links";
 import { UtilityLinks } from "../utils/Links";
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useGlobalContext();
+  const location = useLocation();
+
+  //closes the sidebar when the page is changed
+  useEffect(() => {
+    closeSidebar();
+  }, [location.pathname]);
 
   return (
     <aside className="">

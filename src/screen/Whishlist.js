@@ -8,7 +8,7 @@ const Whishlist = () => {
 
   return (
     <div className="mt-[97px] lg:mt-[150px] px-4 lg:px-40">
-      <h2 className="mb-10 text-2xl font-semibold">Whishlist</h2>
+      <h2 className="pt-10 pb-10 text-2xl font-semibold lg:pt-0">Whishlist</h2>
       <div
         className={` pb-10 grid ${
           whishlistProducts.length <= 0

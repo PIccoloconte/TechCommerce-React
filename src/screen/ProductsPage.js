@@ -6,6 +6,7 @@ import CardProduct from "../components/CardProduct";
 import { useGlobalContext } from "../context";
 import ProductsFilter from "../components/ProductsFilter";
 import { FilterAndSortProducts } from "../utils/FilterAndSortProducts";
+import Spinner from "../components/Spinner";
 
 const ProductsPage = () => {
   const { id } = useParams();
@@ -27,9 +28,6 @@ const ProductsPage = () => {
 
   const [isOpenFilter, setIsOpenFilter] = useState(false);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   //Dynamically change global URL based on category or search
   useEffect(() => {
     const newURL = searchQuery ? `/search?q=${searchQuery}` : `/category/${id}`;
@@ -37,8 +35,14 @@ const ProductsPage = () => {
   }, [id, searchQuery]);
 
   if (isError) return <div>Is error</div>;
+
+  //Show Spinner on loading
   if (isLoading || !data)
-    return <div className="mt-[133px] text-3xl">Is loading...</div>;
+    return (
+      <div className="mt-[53px]">
+        <Spinner />
+      </div>
+    );
 
   //Filter and sort products based on the filters and sorting you select
   const filteredProducts = FilterAndSortProducts(

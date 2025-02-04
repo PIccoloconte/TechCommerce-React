@@ -21,12 +21,14 @@ import Blog from "./screen/Blog";
 import ContactUs from "./screen/ContactUs";
 import About from "./screen/About";
 import SingleBlogPost from "./screen/SingleBlogPost";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <HashRouter>
       <Navbar />
       <Sidebar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomeScreen />}></Route>
         <Route path="/ProductPage/:id" element={<ProductsPage />}></Route>

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/TechCommerce-React/static/css/main.ca3b905c.css",
-    "main.js": "/TechCommerce-React/static/js/main.0b8a3bbe.js",
+    "main.css": "/TechCommerce-React/static/css/main.6332dc5e.css",
+    "main.js": "/TechCommerce-React/static/js/main.e638cec0.js",
     "static/js/488.68cc9a6e.chunk.js": "/TechCommerce-React/static/js/488.68cc9a6e.chunk.js",
     "static/media/AboutHero.jpg": "/TechCommerce-React/static/media/AboutHero.635560a412bee9e170b2.jpg",
     "static/media/ContactUsImage.jpg": "/TechCommerce-React/static/media/ContactUsImage.32ea45436128359871ab.jpg",
@@ -25,12 +25,12 @@
     "static/media/OurMission.jpg": "/TechCommerce-React/static/media/OurMission.3449963e8c44ea4801c7.jpg",
     "static/media/CreditCard.png": "/TechCommerce-React/static/media/CreditCard.77d2cb139ae95ebc8962.png",
     "index.html": "/TechCommerce-React/index.html",
-    "main.ca3b905c.css.map": "/TechCommerce-React/static/css/main.ca3b905c.css.map",
-    "main.0b8a3bbe.js.map": "/TechCommerce-React/static/js/main.0b8a3bbe.js.map",
+    "main.6332dc5e.css.map": "/TechCommerce-React/static/css/main.6332dc5e.css.map",
+    "main.e638cec0.js.map": "/TechCommerce-React/static/js/main.e638cec0.js.map",
     "488.68cc9a6e.chunk.js.map": "/TechCommerce-React/static/js/488.68cc9a6e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca3b905c.css",
-    "static/js/main.0b8a3bbe.js"
+    "static/css/main.6332dc5e.css",
+    "static/js/main.e638cec0.js"
   ]
 }

@@ -1,8 +1,14 @@
 import Office from "../assets/img/Office.png";
-import ClimateEndgame from "../assets/img/ClimateEndgame.png";
-import AirPods from "../assets/img/AirPods.png";
 import Desk from "../assets/img/Desk.png";
 import Coworking from "../assets/img/Coworking.png";
+import SixG from "../assets/img/blog/6G.jpeg";
+import Accessories from "../assets/img/blog/Accessories.jpeg";
+import AISmarthpone from "../assets/img/blog/AI_smartphone.jpeg";
+import AppleInnovation from "../assets/img/blog/Apple_innovation.jpeg";
+import Camera from "../assets/img/blog/Camera.jpeg";
+import FoldableSmartphone from "../assets/img/blog/Foldable_smartphone.jpeg";
+import MobileGaming from "../assets/img/blog/Mobile_gaming.jpeg";
+import S25 from "../assets/img/blog/S25.jpeg";
 
 export const blogPosts = [
   {
@@ -14,6 +20,7 @@ export const blogPosts = [
       "Laptop manufacturers are focusing on sustainability, incorporating recycled materials and biodegradable plastics.",
     tags: ["Laptops", "Sustainability", "Technology"],
     image: Office,
+    hash: "KQM@cZ.8sn~qMxR*RjoftR",
     chapter: [
       {
         sectionTitle: "Eco-friendly Manufacturing",
@@ -51,7 +58,8 @@ export const blogPosts = [
     description:
       "Foldable smartphones are more durable, functional, and mainstream than ever before, thanks to technological advancements.",
     tags: ["Foldable Phones", "Smartphones", "Innovation"],
-    image: Coworking,
+    image: FoldableSmartphone,
+    hash: "K78zu=Io00?^wJD%4nNa=}",
     chapter: [
       {
         sectionTitle: "Enhanced Durability and Materials",
@@ -89,7 +97,8 @@ export const blogPosts = [
     description:
       "AI assistants have become more powerful and intuitive, transforming how users interact with their smartphones.",
     tags: ["AI", "Smartphones", "Virtual Assistants"],
-    image: Coworking,
+    image: AISmarthpone,
+    hash: "KAF?eQ:+00?v_M008wIW-;",
     chapter: [
       {
         sectionTitle: "Natural Language Processing and Context Awareness",
@@ -126,7 +135,8 @@ export const blogPosts = [
     description:
       "Apple continues to push technological boundaries with its latest innovations in hardware, software, and services.",
     tags: ["Apple", "Technology", "Innovation"],
-    image: Desk,
+    image: AppleInnovation,
+    hash: "KCFi49tQnixu$*%3_N%#og",
     chapter: [
       {
         sectionTitle: "The Next-Gen iPhone: More AI, More Power",
@@ -163,7 +173,8 @@ export const blogPosts = [
     description:
       "Samsung is redefining the future of mobile and smart devices with groundbreaking innovations.",
     tags: ["Samsung", "Technology", "Smartphones"],
-    image: Coworking,
+    image: S25,
+    hash: "K3AwF=xu0000xu~qoft7M{",
     chapter: [
       {
         sectionTitle: "Galaxy S25 Ultra: The Ultimate AI-Powered Smartphone",
@@ -200,7 +211,8 @@ export const blogPosts = [
     description:
       "Smartphone accessories have evolved significantly, offering users enhanced functionality, durability, and sustainability.",
     tags: ["Smartphone Accessories", "Technology", "Innovation"],
-    image: Coworking,
+    image: Accessories,
+    hash: "KHPGmh~V0K-pOGR4-;-qt7",
     chapter: [
       {
         sectionTitle: "MagSafe and Wireless Charging Evolution",
@@ -237,7 +249,8 @@ export const blogPosts = [
     description:
       "AI-driven cameras are transforming smartphone photography, making professional-quality images accessible to everyone.",
     tags: ["AI Cameras", "Smartphones", "Photography"],
-    image: Coworking,
+    image: Camera,
+    hash: "KIJ7XR}P%1={X9IU00A1EM",
     chapter: [
       {
         sectionTitle: "Real-Time AI Enhancements for Every Shot",
@@ -274,7 +287,8 @@ export const blogPosts = [
     description:
       "6G is set to revolutionize the mobile industry, offering speeds and capabilities far beyond what 5G provides today.",
     tags: ["6G", "Smartphones", "Connectivity"],
-    image: Desk,
+    image: SixG,
+    hash: "KBA,%:$*00KPD$Vs4mbc?d",
     chapter: [
       {
         sectionTitle: "Unprecedented Speeds and Latency Reduction",
@@ -311,7 +325,8 @@ export const blogPosts = [
     description:
       "Mobile gaming is undergoing a major transformation, driven by AI, cloud gaming, and 6G connectivity.",
     tags: ["Mobile Gaming", "Technology", "AI"],
-    image: Desk,
+    image: MobileGaming,
+    hash: "KRI53[~U^,4UD%RPor9bo{",
     chapter: [
       {
         sectionTitle: "AI-Powered Adaptive Gaming",
@@ -343,7 +358,8 @@ export const blogPosts = [
     description:
       "Foldable smartphones have become more durable, powerful, and widely adopted, changing the way users interact with mobile devices.",
     tags: ["Foldable Phones", "Smartphones", "Innovation"],
-    image: Coworking,
+    image: FoldableSmartphone,
+    hash: "K78zu=Io00?^wJD%4nNa=}",
     chapter: [
       {
         sectionTitle: "Batterie al grafene",

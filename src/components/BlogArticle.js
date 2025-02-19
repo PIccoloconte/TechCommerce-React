@@ -1,7 +1,7 @@
 import React from "react";
-import AirPods from "../assets/img/AirPods.png";
 import { ImArrowUpRight2 } from "react-icons/im";
 import { Link } from "react-router-dom";
+import ImageComponents from "./ImageComponents";
 
 const BlogArticle = ({
   id,
@@ -12,20 +12,24 @@ const BlogArticle = ({
   tags,
   image,
   variant,
-  chapter,
+  hash,
+  imgStyle,
 }) => {
+  console.log(imgStyle);
   return (
     <article
       key={id}
-      className={`${variant === "list" ? "md:flex" : "block"}  w-full`}
+      className={`${
+        variant === "list" ? "md:flex" : "block"
+      }  w-full first:mb-4`}
     >
-      <img
-        src={image}
-        alt={title}
-        className={`${
-          variant === "list" ? "w-full md:max-w-[320px] md:h-52  " : "w-full"
-        } object-contain `}
-      />
+      <div className={`w-full overflow-hidden `}>
+        <ImageComponents
+          src={image}
+          hash={hash}
+          className={imgStyle}
+        ></ImageComponents>
+      </div>
       <Link
         to={`/SingleBlogPost/${id}`}
         className="text-xl font-semibold text-footer_color hover:underline"

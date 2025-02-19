@@ -71,12 +71,16 @@ const ContactUs = () => {
     <div className="mt-[97px] lg:mt-[81px]">
       {/*Hero section*/}
       <section className="relative">
-        <img
-          src={ContactUsImage}
-          alt="Contact-us-image"
-          className="w-full"
-          loading="lazy"
-        ></img>
+        <div className="w-full overflow-hidden aspect-[1585/556]">
+          <img
+            className="object-cover w-full h-full"
+            src={ContactUsImage}
+            alt="Contact-us-image"
+            loading="lazy"
+            width="1920"
+            height="600"
+          ></img>
+        </div>
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="absolute w-full text-center text-white -translate-x-1/2 -translate-y-1/2 xl:text-left left-1/2 top-1/2 0 ">
           <h2 className="mb-3 text-2xl font-semibold md:text-5xl">

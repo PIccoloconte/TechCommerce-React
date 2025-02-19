@@ -14,7 +14,11 @@ const SingleBlogPost = () => {
       <p className="text-[#A0A0A0] text-sm mb-6">{date}</p>
       <h1 className="mb-4 text-3xl font-semibold">{title}</h1>
       <p className="mb-8">{description}</p>
-      <img src={image} alt={title} className="w-full mb-8"></img>
+      <img
+        src={image}
+        alt={title}
+        className="w-full mx-auto mb-8 max-w-max"
+      ></img>
       {chapter.map((el) => {
         return (
           <section key={el.id}>

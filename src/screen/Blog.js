@@ -1,5 +1,4 @@
 import React from "react";
-import AirPods from "../assets/img/AirPods.png";
 import BlogArticle from "../components/BlogArticle";
 import { blogPosts } from "../utils/BlogPosts";
 
@@ -15,33 +14,35 @@ const Blog = () => {
       <div className="xl:flex xl:gap-8">
         <section className="my-10 text-3xl font-bold xl:flex-1">
           <BlogArticle
-            key={blogPosts[0].id}
-            {...blogPosts[0]}
+            key={blogPosts[1].id}
+            {...blogPosts[1]}
             variant="single"
+            imgStyle="w-[300px] h-[300px] object-contain"
           ></BlogArticle>
         </section>
         <section className="my-10 xl:flex-1">
           <div className="">
             {blogPosts.slice(1, 3).map((post) => (
-              <BlogArticle key={post.id} {...post} variant="list"></BlogArticle>
+              <BlogArticle
+                key={post.id}
+                {...post}
+                variant="list"
+                imgStyle="w-[300px] h-[300px] xl:w-[250px] xl:h-[250px] object-contain"
+              ></BlogArticle>
             ))}
           </div>
         </section>
       </div>
-      {/* middle banner*/}
-      <section className="my-10 text-3xl font-bold xl:flex-1">
-        <BlogArticle
-          key={blogPosts[0].id}
-          {...blogPosts[0]}
-          variant="single"
-        ></BlogArticle>
-      </section>
       {/* Grid section */}
       <section className="my-10">
         <h2 className="mb-4 text-2xl font-bold">All blog posts</h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
           {blogPosts.slice(1).map((post) => (
-            <BlogArticle key={post.id} {...post}></BlogArticle>
+            <BlogArticle
+              key={post.id}
+              {...post}
+              imgStyle="w-[300px] h-[300px] 2xl:w-[400px] 2xl:h-[400px] object-contain"
+            ></BlogArticle>
           ))}
         </div>
       </section>

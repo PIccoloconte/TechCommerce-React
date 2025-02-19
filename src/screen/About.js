@@ -7,7 +7,15 @@ const About = () => {
   return (
     <div className="mt-[97px] lg:mt-[81px]">
       <section className="relative mb-8">
-        <img src={AboutHero} alt="AboutHero"></img>
+        <div className="w-full overflow-hidden aspect-[1615/566]">
+          <img
+            className="object-cover w-full h-full"
+            src={AboutHero}
+            alt="AboutHero"
+            width="1920"
+            height="1080"
+          ></img>
+        </div>
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="absolute text-center text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
           <h2 className="w-screen text-2xl lg:text-4xl">

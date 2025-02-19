@@ -70,7 +70,7 @@ const Links = [
     icon: <PiShoppingCartLight className="w-8 h-8" />,
   },
   {
-    url: "/", //Profile
+    url: "/LoginManager", //Da cambiare con il profilo poi
     title: "Profile",
     icon: <CiUser className="w-8 h-8" />,
   },

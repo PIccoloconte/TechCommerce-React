@@ -22,6 +22,11 @@ import ContactUs from "./screen/ContactUs";
 import About from "./screen/About";
 import SingleBlogPost from "./screen/SingleBlogPost";
 import ScrollToTop from "./components/ScrollToTop";
+import ErrorScreen from "./screen/ErrorScreen";
+import LoginManager from "./screen/LoginManager";
+import Login from "./screen/Login";
+import Register from "./screen/Register";
+import ResetPassword from "./screen/ResetPassword";
 
 function App() {
   return (
@@ -39,11 +44,21 @@ function App() {
         <Route path="/ContactUs" element={<ContactUs />}></Route>
         <Route path="/Cart" element={<Cart />}></Route>
         <Route path="/Whishlist" element={<Whishlist />}></Route>
+        <Route path="/LoginManager" element={<LoginManager />}>
+          <Route index element={<Login />}></Route>{" "}
+          <Route path="/LoginManager/Register" element={<Register />}></Route>
+          <Route
+            path="/LoginManager/ResetPassword"
+            element={<ResetPassword />}
+          ></Route>
+        </Route>
+
         <Route path="/Checkout" element={<Checkout />}>
           <Route index element={<Address />} />{" "}
           <Route path="/Checkout/Shipping" element={<Shipping />} />
           <Route path="/Checkout/Payment" element={<Payment />} />
         </Route>
+        <Route path="*" element={<ErrorScreen />} />
       </Routes>
       <Footer />
     </HashRouter>

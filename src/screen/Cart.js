@@ -3,6 +3,9 @@ import Cartitem from "../components/Cartitem";
 import { useGlobalContext } from "../context";
 import { Link } from "react-router-dom";
 import BackToShopBtn from "../components/BackToShopBtn";
+import Container from "../components/Container";
+import Lottie from "lottie-react";
+import Cart_Animation from "../assets/animation/Cart_Animation.json";
 
 const tax = 22;
 const Cart = () => {
@@ -24,19 +27,26 @@ const Cart = () => {
       return parseFloat((total + item.price * item.quantity).toFixed(2));
     }, 0);
   };
+  //Calculate tax
   const CalcTax = () => {
     return parseFloat(((CalcSubtotal() / 100) * tax).toFixed(2));
   };
 
   return (
-    <div className="mt-[97px] lg:mt-[150px] px-4 lg:px-28">
+    <Container className="mt-[97px] lg:mt-[150px] px-4 lg:px-28">
       <div className="w-full gap-12 lg:flex">
+        {/* Products into cart */}
         <section className="py-10 lg:flex-1">
           {cartProducts.length === 0 ? (
             <div>
               <h1 className="mb-10 text-2xl font-semibold">
-                No products into cart...
+                No products into cart.
               </h1>
+              <Lottie
+                animationData={Cart_Animation}
+                loop={true}
+                className="w-[200px] h-[200px]"
+              ></Lottie>
               <BackToShopBtn />
             </div>
           ) : (
@@ -53,10 +63,11 @@ const Cart = () => {
             </>
           )}
         </section>
+        {/* Summary */}
         <section className="px-4 mb-10 border py-14 lg:py-10 border-opacity-30 rounded-xl lg:flex-1 lg:h-fit">
           <h2 className="mb-10 text-2xl font-semibold">Order Summary</h2>
           <div className="mb-6">
-            <p className="text-[#545454] font-medium mb-2">
+            <p className="mb-2 font-medium text-secondary">
               Discount code/promo code
             </p>
             <input
@@ -66,7 +77,7 @@ const Cart = () => {
             ></input>
           </div>
           <div className="mb-6">
-            <p className="text-[#545454] font-medium mb-2">
+            <p className="mb-2 font-medium text-secondary">
               Your bonus card number
             </p>
             <div className="position-relative">
@@ -85,7 +96,7 @@ const Cart = () => {
                 <p>${CalcSubtotal()}</p>
               </div>
               <div className="flex items-center justify-between mb-4">
-                <p className="text-[#545454]">Estimated Tax</p>
+                <p className="text-secondary">Estimated Tax</p>
                 <p className="font-medium">
                   ${`${CalcSubtotal() === 0 ? 0 : CalcTax()}`}
                 </p>
@@ -108,7 +119,7 @@ const Cart = () => {
           </Link>
         </section>
       </div>
-    </div>
+    </Container>
   );
 };
 

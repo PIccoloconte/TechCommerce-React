@@ -1,9 +1,9 @@
 import React from "react";
-import AirPods from "../assets/img/AirPods.png";
-import MacBook from "../assets/img/MacBook.png";
-import PlayStation from "../assets/img/PlayStation.png";
-import VisionPro from "../assets/img/VisionPro.png";
-import { ShopNow } from "./Buttons";
+import AirPods from "../../assets/img/AirPods.png";
+import MacBook from "../../assets/img/MacBook.png";
+import PlayStation from "../../assets/img/PlayStation.png";
+import VisionPro from "../../assets/img/VisionPro.png";
+import { ShopNow } from "../Buttons";
 
 const card = [
   {
@@ -75,7 +75,7 @@ const LayoutGrid = () => {
                       {el.title}
                       <strong>{el.titleStrong}</strong>
                     </h2>
-                    <p className="text-[#909090]">{el.subtitle}</p>
+                    <p className="text-secondary">{el.subtitle}</p>
                   </div>
                 </div>
               );
@@ -89,7 +89,7 @@ const LayoutGrid = () => {
               <h2 className="mb-4 text-3xl font-bold">
                 Macbook<span className="font-normal"> Air</span>
               </h2>
-              <p className="text-[#909090] mb-4">
+              <p className="text-secondary mb-4">
                 The new 15-inch MacBook Air makes room for more of whant you
                 love with a spacious Liquid Retina display
               </p>

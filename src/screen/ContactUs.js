@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ContactUsImage from "../assets/img/ContactUs/ContactUsImage.jpg";
 import { FiPhoneCall } from "react-icons/fi";
 import { LuMailOpen } from "react-icons/lu";
 import { MdOutlineLocationOn } from "react-icons/md";
-import { IconBase } from "react-icons/lib";
+import ImageComponents from "../components/ImageComponents";
+import Container from "../components/Container";
+const mainHash = "LFFY$24nNH%M-oT1nNf6_Nn%WXV@";
 
+//Placeholder contacts
 const cardContacts = [
   {
     icon: <FiPhoneCall className="w-8 h-8 m-auto" />,
@@ -68,25 +71,23 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="mt-[97px] lg:mt-[81px]">
+    <Container className="mt-[97px] lg:mt-[81px]">
       {/*Hero section*/}
-      <section className="relative">
-        <div className="w-full overflow-hidden aspect-[1585/556]">
-          <img
-            className="object-cover w-full h-full"
+      <section className="relative overflow-hidden">
+        <div className="w-full aspect-[1920/520]">
+          {/* old aspect-[1585/556] */}
+          <ImageComponents
             src={ContactUsImage}
-            alt="Contact-us-image"
-            loading="lazy"
-            width="1920"
-            height="600"
-          ></img>
+            hash={mainHash}
+            className="object-cover w-full h-full max-h-[661px]"
+          ></ImageComponents>
         </div>
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="absolute w-full text-center text-white -translate-x-1/2 -translate-y-1/2 xl:text-left left-1/2 top-1/2 0 ">
           <h2 className="mb-3 text-2xl font-semibold md:text-5xl">
             Contact Us
           </h2>
-          <p className="w-full text-sm md:text-2xl">
+          <p className="w-full text-sm md:text-2xl text-secondary">
             Got a question? We had love to hear from you.<br></br> Send us a
             message and we will respond as soon as possible.
           </p>
@@ -95,7 +96,7 @@ const ContactUs = () => {
 
       {/*Card section */}
       <section className="px-4 mb-10 2xl:px-28">
-        <h2 className="my-4 text-2xl font-semibold text-center uppercase md:text-5xl">
+        <h2 className="my-4 text-2xl font-semibold text-center uppercase md:text-4xl">
           Contact Us
         </h2>
         <div className="md:flex md:justify-between md:items-center max-w-[1200px] mx-auto md:gap-7">
@@ -107,7 +108,7 @@ const ContactUs = () => {
               >
                 <div className="mb-2">{card.icon}</div>
                 <h5 className="mb-2 text-2xl font-semibold">{card.title}</h5>
-                <p className="text-xl text-[#A0A0A0]">{card.subTitle}</p>
+                <p className="text-xl text-secondary">{card.subTitle}</p>
               </article>
             );
           })}
@@ -115,10 +116,10 @@ const ContactUs = () => {
       </section>
       {/*Form section*/}
       <section className="px-4 2xl:px-28">
-        <h2 className="mb-4 text-2xl font-semibold text-center uppercase md:text-5xl">
+        <h2 className="mb-4 text-2xl font-semibold text-center uppercase md:text-4xl">
           Get in Touch
         </h2>
-        <p className="w-full mb-4 font-semibold text-center md:text-xl">
+        <p className="w-full mb-4 font-semibold text-center text-secondary md:text-xl">
           Whether you’re looking for solutions or want to explore opportunities,
           we’re here to collaborate with you.
         </p>
@@ -176,7 +177,7 @@ const ContactUs = () => {
           </button>
         </form>
       </section>
-    </div>
+    </Container>
   );
 };
 

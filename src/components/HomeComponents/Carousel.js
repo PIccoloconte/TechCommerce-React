@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
-import AirPods from "../assets/img/AirPods.png";
-import MacBook from "../assets/img/MacBook.png";
-import PlayStation from "../assets/img/PlayStation.png";
-import VisionPro from "../assets/img/VisionPro.png";
-import { ShopNow } from "./Buttons";
+import AirPods from "../../assets/img/AirPods.png";
+import MacBook from "../../assets/img/MacBook.png";
+import PlayStation from "../../assets/img/PlayStation.png";
+import VisionPro from "../../assets/img/VisionPro.png";
+import { ShopNow } from "../Buttons";
 
 const ScrollProducs = [
   {
@@ -79,7 +79,7 @@ const Carousel = () => {
                 className="object-none mb-4 h-80 w-80"
               />
               <h1 className="px-8 mb-4 text-5xl">{el.title}</h1>
-              <p className="text-[#909090] mb-4 px-8">{el.subtitle}</p>
+              <p className="text-secondary mb-4 px-8">{el.subtitle}</p>
               <ShopNow
                 mbValue={28}
                 color={"black"}

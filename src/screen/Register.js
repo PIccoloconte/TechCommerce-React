@@ -4,7 +4,7 @@ import { Formik, Field } from "formik";
 import * as Yup from "yup";
 import { TermsOfUsList } from "../utils/TermsOfUseList";
 import InputField from "../components/InputField";
-
+import Container from "../components/Container";
 const initialValues = {
   email: "",
   password: "",
@@ -36,7 +36,7 @@ const Register = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   return (
-    <div>
+    <Container>
       <h1 className="mb-2 text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
         Create an account
       </h1>
@@ -90,7 +90,7 @@ const Register = () => {
                     id="terms"
                     name="terms"
                     type="checkbox"
-                    className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300"
+                    className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-[#FAFAFA]-300"
                   />
                 </div>
                 <div className="ml-3 text-sm">
@@ -138,7 +138,7 @@ const Register = () => {
       {isOpenModal && (
         <TermsModal isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} />
       )}
-    </div>
+    </Container>
   );
 };
 

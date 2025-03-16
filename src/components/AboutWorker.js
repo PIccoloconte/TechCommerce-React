@@ -51,9 +51,11 @@ const AboutWorker = () => {
               alt={worker.name}
               className="w-full h-[350px] rounded-t-xl"
             ></img>
-            <div className="bg-[#D9D9D9] rounded-b-xl p-3">
+            <div className="p-3 bg-product_bg rounded-b-xl">
               <h4 className="mb-1 text-2xl font-medium">{worker.name}</h4>
-              <p className="mb-2 text-xl font-medium">{worker.role}</p>
+              <p className="mb-2 text-xl font-medium text-secondary">
+                {worker.role}
+              </p>
               <ul className="flex gap-2">
                 {SocialLink.map((el) => {
                   return (

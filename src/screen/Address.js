@@ -3,6 +3,7 @@ import { FiPlus } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import AddressItem from "../components/AddressItem";
 import { useGlobalContext } from "../context";
+import Container from "../components/Container";
 
 const Address = () => {
   const { addressList, setAddressList } = useGlobalContext();
@@ -75,7 +76,7 @@ const Address = () => {
   };
 
   return (
-    <div className="px-4 my-12 xl:px-40">
+    <Container className="px-4 my-12 xl:px-40">
       <h1 className="mb-8 text-xl font-semibold">Select Address</h1>
 
       {addressList.map((item) => {
@@ -195,7 +196,7 @@ const Address = () => {
           Next
         </button>
       </div>
-    </div>
+    </Container>
   );
 };
 

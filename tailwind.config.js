@@ -8,11 +8,8 @@ module.exports = {
     extend: {
       display: ["group-hover", "responsive", "hover"],
       colors: {
-        primary: "#FAFAFA",
-        secondary: "#000000",
+        secondary: "#909090",
         product_bg: "#EDEDED",
-        footer_color: "#181313",
-        search_bg: "#F5F5F5",
       },
       screens: {
         sm: "640px", // ≥ 640px (small - tablet)

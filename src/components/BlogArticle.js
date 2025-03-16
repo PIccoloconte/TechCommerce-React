@@ -15,7 +15,6 @@ const BlogArticle = ({
   hash,
   imgStyle,
 }) => {
-  console.log(imgStyle);
   return (
     <article
       key={id}
@@ -23,7 +22,7 @@ const BlogArticle = ({
         variant === "list" ? "md:flex" : "block"
       }  w-full first:mb-4`}
     >
-      <div className={`w-full overflow-hidden `}>
+      <div className={`w-full overflow-hidden md:flex-1`}>
         <ImageComponents
           src={image}
           hash={hash}
@@ -32,17 +31,17 @@ const BlogArticle = ({
       </div>
       <Link
         to={`/SingleBlogPost/${id}`}
-        className="text-xl font-semibold text-footer_color hover:underline"
+        className="text-xl font-semibold text-[#181313] hover:underline md:flex-1"
       >
-        <div className="p-4">
-          <p className="text-sm text-[#A0A0A0]">
+        <div className="p-4 ">
+          <p className="text-sm text-secondary">
             {author} • {date}
           </p>
           <div className="flex items-center justify-between gap-6 text-xl text-black">
             <h3 className="mt-2 mb-4 text-lg font-semibold">{title}</h3>
-            <ImArrowUpRight2 className="text-xl font-semibold text-footer_color hover:underline"></ImArrowUpRight2>
+            <ImArrowUpRight2 className="text-xl font-semibold text-[#181313] hover:underline"></ImArrowUpRight2>
           </div>
-          <p className="mb-4 text-sm text-[#A0A0A0] line-clamp-2">
+          <p className="mb-4 text-sm text-secondary line-clamp-2">
             {description}
           </p>
           <div className="flex flex-wrap gap-2 mb-4">

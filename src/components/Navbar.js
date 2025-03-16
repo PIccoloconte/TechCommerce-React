@@ -24,14 +24,14 @@ const Navbar = () => {
         </Link>
         <form
           onSubmit={HandleSubmit}
-          className="rounded-lg bg-search_bg lg:max-w-96 lg:w-full "
+          className="rounded-lg bg-[#F5F5F5] lg:max-w-96 lg:w-full "
         >
           <div className="relative flex items-center w-auto h-12 overflow-hidden rounded-lg">
             <button className="w-12 text-gray-300 place-items-center">
               <IoSearchOutline className="w-6 h-6" />
             </button>
             <input
-              className="w-full h-full pr-2 text-sm text-gray-700 outline-none peer bg-search_bg"
+              className="w-full h-full pr-2 text-sm text-gray-700 outline-none peer bg-[#F5F5F5]"
               type="text"
               placeholder="Search"
               value={input}

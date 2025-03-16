@@ -7,6 +7,7 @@ import { useGlobalContext } from "../context";
 import ProductsFilter from "../components/ProductsFilter";
 import { FilterAndSortProducts } from "../utils/FilterAndSortProducts";
 import Spinner from "../components/Spinner";
+import Container from "../components/Container";
 
 const ProductsPage = () => {
   const { id } = useParams();
@@ -53,7 +54,7 @@ const ProductsPage = () => {
   );
 
   return (
-    <div className="mx-4 mb-11 mt-[142px] lg:mt-[126px] lg:flex lg:flex-row-reverse lg:justify-between">
+    <Container className="mx-4 mb-11 mt-[142px] lg:mt-[126px] lg:flex lg:flex-row-reverse lg:justify-between">
       <div className="lg:w-full lg:mr-40">
         <div className="flex flex-col gap-11 lg:flex-row-reverse lg:justify-between lg:items-center lg:pb-6">
           <div className="flex justify-between gap-4 text-center lg:block">
@@ -71,7 +72,7 @@ const ProductsPage = () => {
             {/* SortBy Menu*/}
             <details
               open={isSortMenuOpen}
-              className="relative flex-1 p-4 border rounded-lg max-w-52 border-spacing-3 lg:w-[208px]"
+              className="relative flex-1 p-4 border rounded-lg max-w-52 border-spacing-3 lg:w-[208px] cursor-pointer"
               onToggle={(e) => setIsSortMenuOpen(e.target.open)}
             >
               <summary className="flex items-center justify-between gap-8 list-none appearance-none ">
@@ -120,7 +121,7 @@ const ProductsPage = () => {
         setIsOpenFilter={setIsOpenFilter}
         isOpenFilter={isOpenFilter}
       />
-    </div>
+    </Container>
   );
 };
 

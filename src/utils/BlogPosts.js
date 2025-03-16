@@ -1,6 +1,4 @@
-import Office from "../assets/img/Office.png";
-import Desk from "../assets/img/Desk.png";
-import Coworking from "../assets/img/Coworking.png";
+import Laptop from "../assets/img/blog/Laptop.jpg";
 import SixG from "../assets/img/blog/6G.jpeg";
 import Accessories from "../assets/img/blog/Accessories.jpeg";
 import AISmarthpone from "../assets/img/blog/AI_smartphone.jpeg";
@@ -19,7 +17,7 @@ export const blogPosts = [
     description:
       "Laptop manufacturers are focusing on sustainability, incorporating recycled materials and biodegradable plastics.",
     tags: ["Laptops", "Sustainability", "Technology"],
-    image: Office,
+    image: Laptop,
     hash: "KQM@cZ.8sn~qMxR*RjoftR",
     chapter: [
       {

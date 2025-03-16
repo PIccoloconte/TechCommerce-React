@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import CardProduct from "./CardProduct";
-import CardProductsPlaceholder from "./CardProductsPlaceholder";
-import { useGlobalContext } from "../context";
+import CardProduct from "../CardProduct";
+import CardProductsPlaceholder from "../CardProductsPlaceholder";
+import { useGlobalContext } from "../../context";
 
 const NewArrival = () => {
   const { data, isLoading, isError, valueURL, ChangeGlobalURL } =

@@ -17,7 +17,7 @@ const Sidebar = () => {
     <aside className="">
       {/* Sidebar */}
       <div
-        className={`z-50 fixed top-0 left-0 w-64 h-full bg-footer_color text-white transform transition-transform duration-300 ${
+        className={`z-50 fixed top-0 left-0 w-64 h-full bg-[#181313] text-white transform transition-transform duration-300 ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >

@@ -2,26 +2,30 @@ import React from "react";
 import AboutHero from "../assets/img/About/AboutHero.jpg";
 import OurMission from "../assets/img/About/OurMission.jpg";
 import AboutWorker from "../components/AboutWorker";
+import ImageComponents from "../components/ImageComponents";
+import Container from "../components/Container";
+const mainHash = "L6CPYG5700-;00i_~q56-;~BNaNG";
+const ourMissionHash = "LGA0qV^nDiIU%hk9ITV=InS5t8sB";
 
 const About = () => {
   return (
-    <div className="mt-[97px] lg:mt-[81px]">
+    <Container className={"mt-[97px] lg:mt-[81px]"}>
       <section className="relative mb-8">
-        <div className="w-full overflow-hidden aspect-[1615/566]">
-          <img
-            className="object-cover w-full h-full"
+        <div className="w-full overflow-hidden aspect-[1920/520]">
+          <ImageComponents
             src={AboutHero}
-            alt="AboutHero"
-            width="1920"
-            height="1080"
-          ></img>
+            hash={mainHash}
+            className="object-cover w-full h-full max-h-[661px]"
+          ></ImageComponents>
         </div>
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="absolute text-center text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-          <h2 className="w-screen text-2xl lg:text-4xl">
+          <h2 className="w-screen max-w-[1800px] text-2xl lg:text-4xl">
             Powering the dreams of tech innovators worldwide
           </h2>
-          <p>We provide the tools, you build the future</p>
+          <p className="text-secondary">
+            We provide the tools, you build the future
+          </p>
         </div>
       </section>
 
@@ -55,12 +59,11 @@ const About = () => {
             open doors to new possibilities.
           </p>
         </article>
-        <img
+        <ImageComponents
           src={OurMission}
-          alt="Our Mission"
-          className="flex-1 mx-auto rounded-3xl h-fit"
-          loading="lazy"
-        ></img>
+          hash={ourMissionHash}
+          className="object-contain mx-auto flex-1 w-max-[834px] "
+        ></ImageComponents>
       </section>
 
       <section className="px-2 md:px-4 2xl:px-28 my-7">
@@ -71,7 +74,7 @@ const About = () => {
           <AboutWorker></AboutWorker>
         </div>
       </section>
-    </div>
+    </Container>
   );
 };
 

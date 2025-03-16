@@ -1,9 +1,10 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
+import Container from "../components/Container";
 
 const LoginManager = () => {
   return (
-    <div className="mt-[97px]">
+    <Container className="mt-[97px]">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto mb-10 lg:py-0">
         <Link
           to="/"
@@ -19,7 +20,7 @@ const LoginManager = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

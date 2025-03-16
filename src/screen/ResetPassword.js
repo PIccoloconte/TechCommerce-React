@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Formik, Field } from "formik";
 import * as Yup from "yup";
 import InputField from "../components/InputField";
-
+import Container from "../components/Container";
 const initialValues = {
   email: "",
 };
@@ -16,11 +16,11 @@ const validationSchema = Yup.object({
 
 const ResetPassword = () => {
   return (
-    <div>
+    <Container>
       <h1 className="mb-2 text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
         Forgot your password?
       </h1>
-      <p className="mb-3 text-sm font-medium">
+      <p className="mb-3 text-sm font-medium text-secondary">
         Enter you email address and we will send you instruction to reset you
         password
       </p>
@@ -72,7 +72,7 @@ const ResetPassword = () => {
           </form>
         )}
       </Formik>
-    </div>
+    </Container>
   );
 };
 

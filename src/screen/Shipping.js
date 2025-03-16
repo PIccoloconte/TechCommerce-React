@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import Container from "../components/Container";
 const shipmentData = [
   {
     date: "17 Oct, 2025",
@@ -25,7 +25,7 @@ const Shipping = () => {
   };
 
   return (
-    <div className="px-4 my-12">
+    <Container className="px-4 my-12">
       <h1 className="mb-8 text-xl font-semibold">Shipment Method</h1>
       <div className="mb-10">
         {shipmentData.map((el) => {
@@ -68,7 +68,7 @@ const Shipping = () => {
           Next
         </button>
       </div>
-    </div>
+    </Container>
   );
 };
 

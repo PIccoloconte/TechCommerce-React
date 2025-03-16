@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import CreditCard from "../assets/img/CreditCard.png";
 import { useNavigate } from "react-router-dom";
-
+import Container from "../components/Container";
 const Payment = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="px-4 my-12 xl:px-40">
+    <Container className="px-4 my-12 xl:px-40">
       <h1 className="mb-8 text-xl font-semibold">Payment</h1>
       <div className="flex justify-around mb-10">
         <p className="pb-2 font-medium border-b border-black w-fit">
           Credit Card
         </p>
-        <p className="font-medium pb-2  text-[#717171]">PayPal</p>
+        <p className="font-medium pb-2  text-secondary">PayPal</p>
       </div>
       <img src={CreditCard} alt="CreditCard" className="mb-10"></img>
       <form>
@@ -57,7 +57,7 @@ const Payment = () => {
           Pay
         </button>
       </div>
-    </div>
+    </Container>
   );
 };
 

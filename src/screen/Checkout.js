@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { GiPositionMarker } from "react-icons/gi";
 import { MdLocalShipping } from "react-icons/md";
+import Container from "../components/Container";
 
 const CheckoutSection = [
   {
@@ -28,7 +29,7 @@ const Checkout = () => {
   const location = useLocation();
 
   return (
-    <div className="mt-[97px]">
+    <Container className="mt-[97px]">
       <div className="flex items-center gap-2 px-4 py-8 xl:px-40">
         {CheckoutSection.map((el) => {
           const isActiveIcon = location.pathname === el.path;
@@ -54,7 +55,7 @@ const Checkout = () => {
       <div>
         <Outlet />
       </div>
-    </div>
+    </Container>
   );
 };
 

@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { Formik, Field } from "formik";
 import * as Yup from "yup";
 import InputField from "../components/InputField";
+import Container from "../components/Container";
 
+// Formik and Yup are used for form validation
 const initialValues = {
   email: "",
   password: "",
@@ -29,7 +31,7 @@ const validationSchema = Yup.object({
 
 const Login = () => {
   return (
-    <div>
+    <Container>
       <h1 className="mb-2 text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
         Sign in to your account
       </h1>
@@ -125,7 +127,7 @@ const Login = () => {
           </form>
         )}
       </Formik>
-    </div>
+    </Container>
   );
 };
 

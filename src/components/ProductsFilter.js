@@ -99,7 +99,7 @@ const ProductsFilter = ({
                 <input
                   type="checkbox"
                   id={el.id}
-                  className="text-blue-600 form-checkbox"
+                  className="text-blue-600 cursor-pointer form-checkbox"
                   onChange={(e) =>
                     setSelectedFilters((prev) => ({
                       ...prev,
@@ -107,7 +107,7 @@ const ProductsFilter = ({
                     }))
                   }
                 />
-                <label htmlFor={el.id} className="text-gray-700">
+                <label htmlFor={el.id} className="text-gray-700 cursor-pointer">
                   {el.name}
                 </label>
               </div>

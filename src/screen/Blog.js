@@ -1,10 +1,11 @@
 import React from "react";
 import BlogArticle from "../components/BlogArticle";
 import { blogPosts } from "../utils/BlogPosts";
+import Container from "../components/Container";
 
 const Blog = () => {
   return (
-    <div className="mt-[97px] lg:mt-[150px] px-4 lg:px-10 2xl:px-40">
+    <Container className="mt-[97px] lg:mt-[150px] px-4 lg:px-10 2xl:px-40">
       {" "}
       <header className="py-10 text-center border-b-2">
         <h1 className="text-5xl font-extrabold">CYBER BLOG</h1>
@@ -14,8 +15,8 @@ const Blog = () => {
       <div className="xl:flex xl:gap-8">
         <section className="my-10 text-3xl font-bold xl:flex-1">
           <BlogArticle
-            key={blogPosts[1].id}
-            {...blogPosts[1]}
+            key={blogPosts[0].id}
+            {...blogPosts[0]}
             variant="single"
             imgStyle="w-[300px] h-[300px] object-contain"
           ></BlogArticle>
@@ -46,7 +47,7 @@ const Blog = () => {
           ))}
         </div>
       </section>
-    </div>
+    </Container>
   );
 };
 

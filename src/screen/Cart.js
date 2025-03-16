@@ -109,7 +109,7 @@ const Cart = () => {
           </div>
           <Link to="/Checkout">
             <button
-              className={`w-full py-4 text-white bg-black rounded-md ${
+              className={` w-full py-4 text-white bg-black rounded-md ${
                 isCartEmpty ? "opacity-30" : "opacity-100"
               }`}
               disabled={isCartEmpty}
